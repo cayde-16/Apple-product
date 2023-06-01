@@ -148,9 +148,11 @@ nav.nav-wrapper {
   margin: 0;
   width: 100%;
   min-width: 320px;
+  max-width: 1300px;
   height: 48px;
   max-height: 44px;
   font-size: 17px;
+  margin: 0 auto;
   background-color: #f2f2f2;
 }
 
