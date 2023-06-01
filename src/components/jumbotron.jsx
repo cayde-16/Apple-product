@@ -1,7 +1,21 @@
 import React from "react";
 import iphoneTxt from '../assets/images/iphone-14.jpg';
 import iphoneInHand from '../assets/images/iphone-hand.png';
+
 const Jumbotron = () => {
+
+    const handleScroll = (e) => {
+        e.preventDefault()
+        const soundSection = document.querySelector('#scrollPad');
+
+        window.scrollTo({
+            top: soundSection?.getBoundingClientRect().top,
+            left: 0,
+            behavior: 'smooth'
+        })
+    }
+    
+
     return(
         <div className="jumbotron-section wrapper">
                 <h2 className="title">New</h2>
@@ -12,7 +26,7 @@ const Jumbotron = () => {
                 </p>
             <div className="links">
                 <button className="button">Buy</button>
-                <a className="link" href="/">Learn more</a>
+                <a onClick={handleScroll} className="link" href="/">Learn more</a>
             </div>
             
             <img className="iphone-img" src={iphoneInHand} alt="iPhone" />
