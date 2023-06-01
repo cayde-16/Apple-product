@@ -162,6 +162,8 @@ nav .nav-content {
   width: 100%;
   max-width: 1024px;
   padding: 0 22px;
+  justify-content: center;
+  align-items: center;
 }
 
 nav .list-styled {
@@ -174,6 +176,9 @@ nav .list-styled {
   list-style: none;
 }
 
+
+
+
 nav .link-styled {
   font-size: 12px;
   font-weight: 400;
@@ -185,6 +190,7 @@ nav .link-styled {
   height: 44px;
   color: #000000cc;
 }
+
 
 .jumbotron-section.wrapper {
   margin-left: auto;
@@ -444,3 +450,4 @@ nav .link-styled {
     max-width: 100%;
   }
 }
+

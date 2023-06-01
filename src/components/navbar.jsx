@@ -10,73 +10,73 @@ const Navbar = () => {
             <div className="nav-content">
                 <ul className="list-styled">
                     {/* Apple Logo */}
-                    <li>
+                    <li className="link-styled">
                         <img src={logo} alt="" />
                     </li>
 
                     {/* store item */}
-                    <li>
-                        <p>Store</p>
+                    <li className="link-styled">
+                        <a>Store</a>
                     </li>
 
                     {/* Mac item */}
-                    <li>
-                        <p>Mac</p>
+                    <li className="link-styled">
+                        <a>Mac</a>
                     </li>
 
 
                     {/* ipad item */}
-                    <li>
-                        <p>iPad</p>
+                    <li className="link-styled">
+                        <a>iPad</a>
                     </li>
 
 
                     {/* iPhone item */}
-                    <li>
-                        <p>iPhone</p>
+                    <li className="link-styled">
+                        <a>iPhone</a>
                     </li>
 
                     {/* Watch item */}
-                    <li>
-                        <p>Watch</p>
+                    <li className="link-styled">
+                        <a>Watch</a>
                     </li>
 
                     {/* AirPods */}
-                    <li>
-                        <p>Airpods</p>
+                    <li className="link-styled">
+                        <a>Airpods</a>
                     </li>
 
                     {/* TV & Home */}
-                    <li>
-                        <p>TV & Home</p>
+                    <li className="link-styled">
+                        <a>TV & Home</a>
                     </li>
 
 
                     {/* Entertainment */}
-                    <li>
-                        <p>Entertainment</p>
+                    <li className="link-styled">
+                        <a>Entertainment</a>
                     </li>
 
 
                     {/* Acessories */}
-                    <li>
-                        <p>Acessories</p>
+                    <li className="link-styled">
+                        <a>Acessories</a>
                     </li>
 
                     {/* Support */}
-                    <li>
-                        <p>Support</p>
+                    <li className="link-styled">
+                        <a>Support</a>
                     </li>
 
                     {/* Search Icon */}
-                    <li>
+                    <li className="link-styled">
                         <div>
                             <img src={search} alt="search" />
                         </div>
                     </li>
 
                     {/* Store Icon */}
-                    <li> 
+                    <li className="link-styled"> 
                         <div>
                             <img src={store} alt="store" />
                         </div>   
