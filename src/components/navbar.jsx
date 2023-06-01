@@ -10,7 +10,7 @@ const Navbar = () => {
             <div className="nav-content">
                 <ul className="list-styled">
                     {/* Apple Logo */}
-                    <li className="link-styled">
+                    <li>
                         <img src={logo} alt="" />
                     </li>
 
@@ -68,19 +68,21 @@ const Navbar = () => {
                         <a>Support</a>
                     </li>
 
-                    {/* Search Icon */}
-                    <li className="link-styled">
-                        <div>
-                            <img src={search} alt="search" />
+                    {/* Search & Store Icon */}
+                    <li>
+                        <div className="icons-container">
+                            <div className="navIcon">
+                                <img src={search} alt="search" />
+                            </div>
+
+                            <div className="navIcon">
+                                <img src={store} alt="store" />
+                            </div>
+
                         </div>
                     </li>
 
-                    {/* Store Icon */}
-                    <li className="link-styled"> 
-                        <div>
-                            <img src={store} alt="store" />
-                        </div>   
-                    </li>
+                    
                 </ul>
             </div>
 

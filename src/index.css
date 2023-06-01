@@ -14,7 +14,9 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-
+p{
+  margin: 0;
+}
 body::-webkit-scrollbar-track {
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
   border-radius: 10px;
@@ -148,7 +150,6 @@ nav.nav-wrapper {
   margin: 0;
   width: 100%;
   min-width: 320px;
-  max-width: 1300px;
   height: 48px;
   max-height: 44px;
   font-size: 17px;
@@ -451,3 +452,9 @@ nav .link-styled {
   }
 }
 
+.icons-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4.55rem;
+}
