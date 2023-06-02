@@ -22,9 +22,11 @@ import {
     mobileAndTabletCheck
 
 } from "webgi";
+
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
+gsap.registerPlugin(ScrollTrigger);
 
 const WebgiViewer = () => {
     useRef(null);
@@ -37,7 +39,7 @@ const WebgiViewer = () => {
 
         const camera = viewer.scene.activeCamera;
         const position = camera.position;
-        const target = camera.target
+        const target = camera.target;
 
         const manager = await viewer.addPlugin(AssetManagerPlugin)
 
@@ -64,7 +66,7 @@ const WebgiViewer = () => {
         let needsUpdated = true;
 
         viewer.addEventListener("preFrame", () => {
-            
+
             if(needsUpdated){
                 camera.positionTargetUpdated(true);
                 needsUpdated = false;
