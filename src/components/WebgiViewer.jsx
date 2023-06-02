@@ -1,4 +1,4 @@
-import React, { useRef, useState, userCallback, forwardRef, useImperativeHandle, useCallback } from "react";
+import React, { useRef, useState, userCallback, forwardRef, useImperativeHandle, useCallback, useEffect } from "react";
 import {
     ViewerApp,
     AssetManagerPlugin,
@@ -8,6 +8,7 @@ import {
     TonemapPlugin,
     SSRPlugin,
     SSAOPlugin,
+    CanvasSnipperPlugin,
     // DiamondPlugin,
     // FrameFadePlugin,
     // GLTFAnimationPlugin,
@@ -18,12 +19,12 @@ import {
     GammaCorrectionPlugin,
 
     addBasePlugins,
-    ITexture, TweakpaneUiPlugin, AssetManagerBasicPopupPlugin, CanvasSnipperPlugin,mobileAndTabletCheck
+    mobileAndTabletCheck
 
 } from "webgi";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import "./styles.css";
+
 
 const WebgiViewer = () => {
     useRef(null);
@@ -56,14 +57,14 @@ const WebgiViewer = () => {
 
         // or use this to add all main ones at once.
         await addBasePlugins(viewer)
-
-        // Add more plugins not available in base, like CanvasSnipperPlugin which has helpers to download an image of the canvas.
         await viewer.addPlugin(CanvasSnipperPlugin)
+        // Add more plugins not available in base, like CanvasSnipperPlugin which has helpers to download an image of the canvas.
 
         // This must be called once after all plugins are added.
         viewer.renderer.refreshPipeline()
 
         await manager.addFromPath("scene-black.glb")
+        viewer.getPlugin(TonemapPlugin).config.clipBackground = true
 
         // Load an environment map if not set in the glb file
         // await viewer.scene.setEnvironment(
@@ -80,7 +81,7 @@ const WebgiViewer = () => {
     useEffect(() => {
         setupViewer()
     }, []);
-    
+
 
     return(
         <div id="webgi-canvas-container">
