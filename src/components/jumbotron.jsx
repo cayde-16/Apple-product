@@ -6,7 +6,7 @@ const Jumbotron = () => {
 
     const handleScroll = (e) => {
         e.preventDefault()
-        const soundSection = document.querySelector('#scrollPad');
+        const soundSection = document.querySelector('.sound-section');
 
         window.scrollTo({
             top: soundSection?.getBoundingClientRect().top,
@@ -25,7 +25,7 @@ const Jumbotron = () => {
                     From $41.62/mo. for 24 mo. or $999 before trade-in
                 </p>
             <div className="links">
-                <button className="button">Buy</button>
+                <button  className="button">Buy</button>
                 <a onClick={handleScroll} className="link" href="/">Learn more</a>
             </div>
             
