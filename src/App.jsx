@@ -2,6 +2,8 @@ import Navbar from './components/navbar'
 import Jumbotron from './components/jumbotron';
 import Soundsection from './components/soundsection';
 import Displaysection from './components/displaySection';
+import WebgiViewer from './components/WebgiViewer';
+
 
 function App() {
 
@@ -11,6 +13,7 @@ function App() {
       <Jumbotron/>
       <Soundsection/>
       <Displaysection/>
+      <WebgiViewer/>
     </div>
   );
 }
