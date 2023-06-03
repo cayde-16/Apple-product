@@ -23,6 +23,7 @@ import {
 
 } from "webgi";
 
+import { scrollAnimation } from "../lib/scroll-animation";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -32,6 +33,16 @@ const WebgiViewer = () => {
     useRef(null);
     const canvasRef = useRef(null);
 
+    const memoizedScrollAnimation = useCallback((position, target, onUpdate) => {
+        if(position && target && onUpdate){
+            scrollAnimation(position, target, onUpdate)
+            console.log('check passed')
+        }else{
+            console.log('check failed')
+        }
+
+    }, [])
+    
     const setupViewer = useCallback(async() => {
         const viewer = new ViewerApp({
         canvas: canvasRef.current,
@@ -52,7 +63,6 @@ const WebgiViewer = () => {
         await viewer.addPlugin(SSRPlugin)
         await viewer.addPlugin(SSAOPlugin)
         await viewer.addPlugin(BloomPlugin)
-        await viewer.addPlugin(CanvasSnipperPlugin)
 
         viewer.renderer.refreshPipeline()
 
@@ -63,18 +73,22 @@ const WebgiViewer = () => {
 
         window.scrollTo(0, 0);
 
-        let needsUpdated = true;
+        let needUpdate = true; 
+
+        const onUpdate = () => {
+            needUpdate = true;
+            viewer.setDirty();
+        }
 
         viewer.addEventListener("preFrame", () => {
-
-            if(needsUpdated){
+            if(needUpdate){
                 camera.positionTargetUpdated(true);
-                needsUpdated = false;
+                needUpdate = false;
             }
 
         });
 
-    
+        memoizedScrollAnimation(position, target, onUpdate);
     }, [])
 
 
