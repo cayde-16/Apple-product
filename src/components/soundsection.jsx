@@ -1,7 +1,14 @@
 import React, { useRef } from "react";
 
 const Soundsection = () => {
-
+    const handleMore = () => {
+        const element = document.querySelector('.display-section');
+        window.scrollTo({
+            top:element?.getBoundingClientRect().bottom,
+            left:0,
+            behavior: "smooth",
+        })
+    }
     
     const handleChange = (e) => {
         e.preventDefault()

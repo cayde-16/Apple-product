@@ -1,6 +1,7 @@
 import { gsap } from "gsap";
 
 export const scrollAnimation = (position, target, onUpdate) => {
+    const scrubValue = 2
     const tl = gsap.timeline();
 
     tl.to(position, {
@@ -11,7 +12,7 @@ export const scrollAnimation = (position, target, onUpdate) => {
             trigger: ".sound-section",
             start:"top bottom",
             end:"top top",
-            scrub: 1,
+            scrub: scrubValue,
             immediateRender: false,
         },
         onUpdate
@@ -25,8 +26,66 @@ export const scrollAnimation = (position, target, onUpdate) => {
             trigger: ".sound-section",
             start:"top bottom",
             end:"top top",
-            scrub: 1,
+            scrub: scrubValue,
             immediateRender: false
-        },})
+        },
+    
+    })
+    .to('.jumbotron-section', {
+        opacity: 0,
+        scrollTrigger: {
+            trigger: ".sound-section",
+            start:"top bottom",
+            end:"top top",
+            scrub: scrubValue,
+            immediateRender: false
+        },
+    })
+    .to('.sound-section', {
+        opacity: 1,
+        scrollTrigger: {
+            trigger: ".sound-section",
+            start:"top bottom",
+            end:"top top",
+            scrub: scrubValue,
+            immediateRender: false
+        },
+    }) 
+    .to(position, {
+        x:1.56,
+        y:5.0,
+        z:0.01,
+        scrollTrigger: {
+            trigger: ".display-section",
+            start:"top bottom",
+            end:"top top",
+            scrub: scrubValue,
+            immediateRender: false,
+        },
+        onUpdate
+
+    }).to(target, {
+        x: -0.55,
+        y:  0.32,
+        z: 0.0,
+        scrollTrigger: {
+            trigger: ".display-section",
+            start:"top bottom",
+            end:"top top",
+            scrub: scrubValue,
+            immediateRender: false
+        },
+    
+    }).to('.display-section', {
+        opacity: 1,
+        scrollTrigger: {
+            trigger: ".display-section",
+            start:"top bottom",
+            end:"top top",
+            scrub: scrubValue,
+            immediateRender: false
+        },
+    }) 
+
 
 }
